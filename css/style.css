@@ -73,14 +73,8 @@ section {
 }
 
 section.section2 {
-  height: min-content;
+  height: fit-content;
   background: linear-gradient(to top, #00274e 10%, #fff 11%, #fff 100%);
-}
-section.section3 {
-  height: min-content;
-}
-section.section4 {
-  height: min-content;
 }
 
 .scroll-down {
@@ -89,7 +83,7 @@ section.section4 {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 15px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -100,16 +94,28 @@ section.section4 {
 .image-motion {
   width: 100%;
   height: 100%;
-  object-position: center;
   transform-origin: 50% 0;
 }
 
+.image-motion img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.yunseul-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  /* background: yellow; */
+}
 .yunseul-picture {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background: url("../pic/yunseul-pic-bg.png") no-repeat center center;
-  background-size: cover;
-  position: relative;
+  overflow: hidden;
 }
 
 .yunseul-picture::before {
@@ -130,15 +136,8 @@ section.section4 {
 }
 
 .yunseul-pic dl {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
   text-align: center;
-  width: 100%;
   padding: 0 20px;
-  box-sizing: border-box;
   color: #fff;
   line-height: 1.5;
   animation: sparkle 3s ease-in-out infinite;
@@ -160,9 +159,9 @@ section.section4 {
 }
 
 .yunseul-pic dl dt {
+  z-index: 2;
   font-size: 30px;
   margin-bottom: 5px;
-  margin-top: 68px;
 }
 
 .header {
@@ -197,10 +196,6 @@ section.section4 {
 /* .header .nav a:hover {
 } */
 
-.section3 {
-  padding: 150px 250px;
-}
-
 .profile {
   order: -1;
   margin-right: 40px;
@@ -213,10 +208,21 @@ section.section4 {
   border-radius: 25px;
 }
 
+.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-wrap {
+  border: 1px solid #000;
+  width: 1430px;
+  margin: 0 auto;
+}
+
 .about-me {
   display: flex;
   gap: 10px;
-  margin-bottom: -30px;
 }
 .about-me h2 {
   position: relative;
@@ -240,7 +246,12 @@ section.section4 {
 .about-info {
   /* border: 1px solid #000; */
   display: flex;
+  /* justify-content: space-between; */
   gap: 40px;
+}
+
+.about-info > * {
+  flex: 1 1 auto;
 }
 
 .info-name,
@@ -285,12 +296,6 @@ section.section4 {
   gap: 40px;
 }
 
-.experience {
-  margin-top: 20px;
-  margin-left: 123px;
-  line-height: 1.5;
-}
-
 .experience strong {
   padding: 5px 20px;
   background: var(--main-color);
@@ -308,12 +313,6 @@ section.section4 {
 
 .experience li {
   margin-bottom: 13px;
-}
-
-.skill {
-  margin-top: 20px;
-  margin-left: 123px;
-  line-height: 1.5;
 }
 
 .skill-item {
@@ -366,23 +365,19 @@ section.section4 {
 }
 
 .section4 {
-  position: relative;
-  padding: 100px;
-  height: 100vh;
-  padding: 150px 250px;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.section4::before {
-  content: "";
-  position: absolute;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+.website-slider-wrap {
   width: 1392px;
   height: 780px;
   border: 2px solid #386ca0;
   border-radius: 20px;
   background-color: var(--main-color);
+  overflow: hidden;
 }
 
 .project-font {
@@ -403,6 +398,6 @@ section.section4 {
 }
 
 .samsung-design .samsung02 img {
-  width: 550px;
+  width: 500px;
   height: auto;
 }
